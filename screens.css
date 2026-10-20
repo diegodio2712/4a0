@@ -1,0 +1,160 @@
+/* ===== Início ===== */
+.hero { text-align: center; padding: 24px 0 8px; }
+.hero-sprites { display: flex; justify-content: center; align-items: flex-end; gap: 4px; }
+.hero-title { font-size: clamp(1.1rem, 5vw, 2rem); color: var(--red); text-shadow: 3px 3px 0 var(--border); margin-top: 8px; }
+.hero-text { max-width: 520px; margin: 0 auto 16px; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.feature-grid { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.feature { background: var(--surface); border: 3px solid var(--border); border-radius: var(--radius); padding: 16px; }
+.feature p { margin: 0; color: var(--ink-soft); }
+.feature .icon { color: var(--red); }
+
+/* ===== Login ===== */
+.screen-auth { max-width: 440px; margin: 0 auto; }
+.auth-form .btn { width: 100%; }
+
+/* ===== Painel ===== */
+.dash-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.dash-card {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 14px; background: var(--surface);
+  border: 3px solid var(--border); border-radius: var(--radius);
+}
+.dash-card > div { display: grid; }
+.dash-card .icon { color: var(--red); }
+.countdown { font-family: var(--pixel); font-size: .9rem; }
+.shortcut-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.shortcut {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 16px 8px; min-height: 96px;
+  background: var(--surface); border: 3px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); text-decoration: none; font-weight: 700;
+}
+.shortcut:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--border); }
+
+/* ===== Sorteio ===== */
+.legend { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+
+/* ===== Captura ===== */
+.capture-stage {
+  display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+  padding: 16px;
+  background: linear-gradient(#bfe3a8 0 60%, #9fcf7f 60%);
+  border: 3px solid var(--border); border-radius: var(--radius);
+  color: #1e1e24;
+}
+.capture-info { text-align: center; }
+.ball-picker { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+@media (max-width: 480px) { .ball-picker { grid-template-columns: repeat(2, 1fr); } }
+.ball-option {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  min-height: 96px; padding: 10px 6px;
+  background: var(--surface); border: 3px solid var(--border); border-radius: var(--radius);
+  font-weight: 700; font-size: .85rem; cursor: pointer;
+}
+.ball-option.is-selected { outline: 4px solid var(--red); outline-offset: -1px; }
+.ball-option:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ===== Coleção ===== */
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.search-field {
+  flex: 1 1 220px; display: flex; align-items: center; gap: 6px;
+  padding-left: 12px; background: var(--surface);
+  border: 3px solid var(--border); border-radius: 10px;
+}
+.search-field input { border: 0; flex: 1; min-width: 0; padding-left: 0; background: transparent; }
+.toolbar select { flex: 0 1 200px; }
+.detail-head { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; position: relative; }
+.detail-close { position: absolute; top: -6px; right: -6px; }
+.move-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.move-chip {
+  display: grid; padding: 8px 10px;
+  border: 2px solid var(--border); border-left: 8px solid var(--type-color); border-radius: 8px;
+  background: var(--surface-2);
+}
+.move-chip small { color: var(--ink-soft); }
+
+/* ===== Equipe ===== */
+.section-head { display: flex; align-items: center; gap: 10px; }
+.section-head h2 { margin: 0; }
+.team-slots { list-style: none; padding: 0; margin: 12px 0 24px; display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+@media (max-width: 360px) { .team-slots { grid-template-columns: 1fr; } }
+.team-slot {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  min-height: 76px; padding: 8px 10px;
+  background: var(--surface); border: 3px solid var(--border); border-radius: var(--radius);
+}
+.team-slot.is-empty { justify-content: center; border-style: dashed; background: transparent; }
+.slot-index { font-family: var(--pixel); font-size: .7rem; width: 2ch; }
+.slot-info { flex: 1; min-width: 90px; display: grid; justify-items: start; }
+.slot-actions { display: flex; gap: 4px; }
+
+/* ===== Elite dos 4 ===== */
+.elite-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.elite-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px; background: var(--surface);
+  border: 3px solid var(--border); border-radius: var(--radius);
+}
+.elite-order {
+  flex: none; display: grid; place-items: center; width: 44px; height: 44px;
+  background: var(--red); color: #fff; border-radius: 50%;
+  font-family: var(--pixel); font-size: .8rem; border: 3px solid var(--border);
+}
+.elite-body h3 { display: inline; margin-right: 8px; }
+.elite-team { display: flex; flex-wrap: wrap; margin-top: 4px; }
+
+/* ===== Batalha ===== */
+.screen-battle { max-width: 720px; margin: 0 auto; }
+.battle-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-family: var(--pixel); font-size: .6rem; }
+.battlefield {
+  display: grid; gap: 8px; padding: 12px;
+  background: linear-gradient(#e8f4d8 0 50%, #d4e8b8 50%);
+  border: 3px solid var(--border); border-radius: var(--radius);
+  color: #1e1e24;
+}
+.combatant { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.combatant-box {
+  flex: 1; max-width: 300px; padding: 8px 10px;
+  background: #fffdf3; border: 3px solid #1e1e24; border-radius: 10px 4px 10px 4px;
+}
+.combatant-name { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.combatant-name strong { flex: 1; font-family: var(--pixel); font-size: .65rem; }
+.combatant-name > span:last-child { font-family: var(--pixel); font-size: .6rem; }
+.combatant-sprite { flex: none; }
+@media (max-width: 420px) {
+  .foe .combatant-sprite { --sprite-size: 96px !important; }
+  .player .combatant-sprite { --sprite-size: 112px !important; }
+}
+.battle-log {
+  height: 96px; overflow-y: auto; margin: 10px 0;
+  padding: 10px 14px; background: var(--surface);
+  border: 3px solid var(--border); border-radius: 8px;
+  font-family: var(--pixel); font-size: .6rem; line-height: 1.9;
+}
+.battle-log p { margin: 0; }
+.battle-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.move-btn {
+  display: grid; gap: 2px; justify-items: start;
+  min-height: 64px; padding: 8px 12px;
+  background: var(--surface); text-align: left;
+  border: 3px solid var(--border); border-left: 10px solid var(--type-color, var(--ink-soft)); border-radius: 10px;
+  cursor: pointer;
+}
+.move-btn small { color: var(--ink-soft); }
+.move-btn:disabled { opacity: .45; }
+.switch-btn { grid-template-columns: auto 1fr; align-items: center; column-gap: 8px; }
+.switch-btn .sprite { grid-row: span 2; }
+
+/* ===== Histórico ===== */
+.stat-tiles { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin-bottom: 16px; }
+.stat-tile {
+  display: grid; justify-items: center; gap: 2px; padding: 14px;
+  background: var(--surface); border: 3px solid var(--border); border-radius: var(--radius);
+}
+.stat-tile strong { font-family: var(--pixel); font-size: 1rem; }
+.stat-tile .icon { color: var(--red); }
+.table-wrap { overflow-x: auto; border: 3px solid var(--border); border-radius: var(--radius); }
+.history-table { width: 100%; border-collapse: collapse; background: var(--surface); }
+.history-table th, .history-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--surface-2); white-space: nowrap; }
+.history-table th { background: var(--surface-2); font-size: .85rem; }
